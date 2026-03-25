@@ -3,6 +3,7 @@
   import Board from '$lib/components/Board.svelte';
   import HUD from '$lib/components/HUD.svelte';
   import DifficultyPicker from '$lib/components/DifficultyPicker.svelte';
+  import Confetti from '$lib/components/Confetti.svelte';
 
   let mouseDown = $state(false);
 
@@ -39,6 +40,7 @@
       </div>
 
       {#if state.phase === 'won'}
+        <Confetti />
         <p class="status-msg win">You win! 🎉</p>
       {:else if state.phase === 'lost'}
         <p class="status-msg lose">Game over! 💀</p>
